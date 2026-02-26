@@ -63,7 +63,7 @@ def generate_nc():
     return f"NC-{year}-{num+1:04d}"
 
 
-st.title("GIPL OEM Quality Alert System")
+st.title("GIPL Quality Alert System")
 
 # Form
 customer = st.selectbox("Customer", customer_master.iloc[:, 0])
@@ -102,7 +102,7 @@ qty = st.number_input("Quantity", min_value=1)
 # NEW FIELD: BARCODE ENTRY
 barcode_no = st.text_input(
     "Barcode No (Manual Entry)",
-    placeholder="Scan or enter barcode number"
+    placeholder="Enter Barcode"
 )
 
 # NEW FIELD: PREPARED BY
@@ -210,4 +210,5 @@ if st.button("Generate Quality Alert"):
             "Download Alert",
             f,
             file_name=f"{nc_no}.png"
+
         )
