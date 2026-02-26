@@ -1,0 +1,313 @@
+part_no,process_seq,process_name
+0546-G-006,1,Machining
+0546-G-006,2,Sujata Incoming Inspection
+0546-G-006,3,Plating - Sidhant
+0546-G-006,4,Visual Inspection
+0647-019,1,Machining
+0647-019,2,Pip Removal
+0647-019,3,Visual Inspection
+0647-019,4,Plating - Sidhant
+10238117,1,Machining
+10238117,2,Buffing
+10238117,3,Counter
+10238117,4,Visual Inspection
+10238117,5,TPG Inspection
+10238117,6,Total Length Inspection
+12201,1,Machining
+12201,2,Counter
+12201,3,PPG Inspection
+12201,4,Visual Inspection
+12409,1,Machining
+12409,2,Counter
+12409,3,PPG Inspection
+12409,4,Visual Inspection
+12413,1,Machining
+12413,2,Counter
+12413,3,PPG Inspection
+12413,4,Visual Inspection
+1583,1,Machining
+1583,2,Counter
+1583,3,PPG Inspection
+1583,4,Visual Inspection
+1673-38HV900,1,Machining
+1673-38HV900,2,Buffing
+1673-38HV900,3,Visual Inspection
+1SN,1,Machining
+1SN,2,Plating - Sidhant
+1SN,3,Buffing
+1SN,4,Visual Inspection
+2021992,1,Machining
+2021992,2,Counter
+2021992,3,PPG Small Inspection
+2021992,4,Drill Pass
+2021992,5,Solex Inspection
+2021992,6,Visual Inspection
+2022045,1,Machining
+2022045,2,Counter
+2022045,3,PPG Small Inspection
+2022045,4,Drill Pass
+2022045,5,Solex Inspection
+2022045,6,Visual Inspection
+2022268,1,Machining
+2022268,2,Counter
+2022268,3,PPG Small Inspection
+2022268,4,Drill Pass
+2022268,5,Solex Inspection
+2022268,6,Visual Inspection
+2022363,1,Machining
+2022363,2,Counter
+2022363,3,PPG Small Inspection
+2022363,4,Drill Pass
+2022363,5,Solex Inspection
+2022363,6,Visual Inspection
+2022837,1,Machining
+2022837,2,Counter
+2022837,3,PPG Small Inspection
+2022837,4,PPG Big Inspection
+2022837,5,Visual Inspection
+2022840,1,Machining
+2022840,2,Counter
+2022840,3,PPG Small Inspection
+2022840,4,PPG Big Inspection
+2022840,5,Visual Inspection
+2202380,1,Machining
+2202380,2,Counter
+2202380,3,PPG Small Inspection
+2202380,4,PPG Big Inspection
+2202380,5,Air Cleaning
+2202380,6,Microscope Inspection
+2202380,7,Visual Inspection
+2202381,1,Machining
+2202381,2,Counter
+2202381,3,PPG Small Inspection
+2202381,4,PPG Big Inspection
+2202381,5,Air Cleaning
+2202381,6,Microscope Inspection
+2202381,7,Visual Inspection
+2202382,1,Machining
+2202382,2,Counter
+2202382,3,PPG Small Inspection
+2202382,4,PPG Big Inspection
+2202382,5,Air Cleaning
+2202382,6,Microscope Inspection
+2202382,7,Visual Inspection
+22392-G,1,Machining
+22392-G,2,Tapping
+22392-G,3,Milling
+22392-G,4,Deburring
+22392-G,5,Visual Inspection
+2282026,1,Machining
+2282026,2,Counter
+2282026,3,PPG Inspection
+2282026,4,Drill Pass
+2282026,5,Visual Inspection
+25010-08,1,Machining
+25010-08,2,Pip Removal
+25010-08,3,Visual Inspection
+2SN,1,Machining
+2SN,2,Plating - Sidhant
+2SN,3,Buffing
+2SN,4,Visual Inspection
+31001-00-00,1,Machining
+31001-00-00,2,Drilling
+31001-00-00,3,PPG Inspection
+32001-00-00,1,Machining
+32001-00-00,2,Drilling
+32001-00-00,3,Cross Drilling
+32001-00-00,4,PPG Inspection
+32001-00-00,5,Visual Inspection
+35752-D,1,Machining
+35752-D,2,Counter
+35752-D,3,PPG Inspection
+35752-D,4,Visual Inspection
+371450,1,Machining
+371450,2,Step Length Inspection
+371450,3,Total Length Inspection
+371450,4,Visual Inspection
+371450,5,Step Diameter Inspection
+371548-B,1,Machining
+371548-B,2,Step Length Inspection
+371548-B,3,Total Length Inspection
+371548-B,4,Visual Inspection
+371997-B,1,Machining
+371997-B,2,Step Length Inspection
+371997-B,3,Total Length Inspection
+371997-B,4,Visual Inspection
+372186,1,Machining
+372186,2,Step Length Inspection
+372186,3,Total Length Inspection
+372186,4,Visual Inspection
+372231,1,Machining
+372231,2,Step Length Inspection
+372231,3,Total Length Inspection
+372231,4,Visual Inspection
+372291-B,1,Machining
+372291-B,2,Step Length Inspection
+372291-B,3,Total Length Inspection
+372291-B,4,Visual Inspection
+372291-B,5,Marking
+372346,1,Machining
+372346,2,Step Length Inspection
+372346,3,Total Length Inspection
+372346,4,Visual Inspection
+372349,1,Machining
+372349,2,Step Length Inspection
+372349,3,Total Length Inspection
+372349,4,Visual Inspection
+372426,1,Machining
+372426,2,Step Length Inspection
+372426,3,Total Length Inspection
+372426,4,Step Diameter Inspection
+372426,5,Visual Inspection
+37820-D,1,Machining
+37820-D,2,Bloomtech Incoming Inspection
+37820-D,3,Plating - Ishika
+37820-D,4,Visual Inspection
+382295-A,1,Machining
+382295-A,2,Counter
+382295-A,3,PPG Small Inspection
+382295-A,4,PPG Big Inspection
+382295-A,5,Visual Inspection
+38653-E,1,Machining
+38653-E,2,Counter
+38653-E,3,PPG Inspection
+38653-E,4,Visual Inspection
+38953-E,1,Machining
+38953-E,2,Counter
+38953-E,3,PPG Inspection
+38953-E,4,Visual Inspection
+4SN,1,Machining
+4SN,2,Plating - Sidhant
+4SN,3,Buffing
+4SN,4,Visual Inspection
+5044-4V90,1,Machining
+5044-4V90,2,Buffing
+5044-4V90,3,Visual Inspection
+505015318,1,Machining
+505015318,2,Counter
+505015318,3,Plating - SV Metatech
+505015318,4,PPG Inspection
+505015318,5,Visual Inspection
+505018376,1,Machining
+505018376,2,Counter
+505018376,3,PPG Inspection
+505018376,4,Visual Inspection
+505038378,1,Machining
+505038378,2,Counter
+505038378,3,PPG Inspection
+505038378,4,Visual Inspection
+505065701,1,Machining
+505065701,2,Facing
+505065701,3,Plating - Bharti
+505065701,4,Visual Inspection
+52410,1,Machining
+52410,2,Pip Removal
+52410,3,Barreling
+52410,4,Visual Inspection
+52411,1,Machining
+52411,2,Pip Removal
+52411,3,Barreling
+52411,4,Visual Inspection
+5430,1,Machining
+5430,2,Pip Removal
+5430,3,Barreling
+5430,4,Visual Inspection
+572112,1,Machining
+572112,2,Counter
+572112,3,PPG Inspection
+572112,4,Total Length Inspection
+572112,5,Visual Inspection
+572112,6,Marking
+572294,1,Machining
+572294,2,Counter
+572294,3,PPG Inspection
+572294,4,Total Length Inspection
+572294,5,Visual Inspection
+57654-C,1,Machining
+57654-C,2,Counter
+57654-C,3,PPG Inspection
+57654-C,4,Total Length Inspection
+57654-C,5,Visual Inspection
+57654-C,6,Marking
+641711-B,1,Machining
+641711-B,2,Drilling
+641711-B,3,Milling
+641711-B,4,Deburring
+641711-B,5,Grinding - Om Sai
+641711-B,6,PRG Inspection
+641711-B,7,Visual Inspection
+642461,1,Machining
+642461,2,Drilling
+642461,3,Milling
+642461,4,Deburring
+642461,5,Grinding - Om Sai
+642461,6,PRG Inspection
+642461,7,Visual Inspection
+642461,8,Marking
+64575-H,1,Machining
+64575-H,2,Drilling
+64575-H,3,Milling
+64575-H,4,Deburring
+64575-H,5,Visual Inspection
+7674-019L,1,Machining
+7674-019L,2,Milling
+7674-019L,3,Deburring
+7674-019L,4,Barreling
+7674-019L,5,Visual Inspection
+7674-019S,1,Machining
+7674-019S,2,Counter
+7674-019S,3,PPG Small Inspection
+7674-019S,4,PPG Big Inspection
+7674-019S,5,Visual Inspection
+7843-027,1,Machining
+7843-027,2,Counter
+7843-027,3,Grinding
+7843-027,4,PPG Inspection
+7843-027,5,Visual Inspection
+A-025759-012F,1,Machining
+A-025759-012F,2,Facing
+A-025759-012F,3,Vibrodeburring
+A-025759-012F,4,PPG Inspection
+A-025759-012F,5,Plating - Ishika
+A-025759-012F,6,Autosorting Inspection
+A-025759-012F,7,Visual Inspection
+A-025759-014F,1,Machining
+A-025759-014F,2,Facing
+A-025759-014F,3,Vibrodeburring
+A-025759-014F,4,PPG Inspection
+A-025759-014F,5,Plating - Ishika
+A-025759-014F,6,Autosorting Inspection
+A-025759-014F,7,Visual Inspection
+A-025759-015F,1,Machining
+A-025759-015F,2,Facing
+A-025759-015F,3,Vibrodeburring
+A-025759-015F,4,PPG Inspection
+A-025759-015F,5,Plating - Ishika
+A-025759-015F,6,Autosorting Inspection
+A-025759-015F,7,Visual Inspection
+A001-021,1,Machining
+A001-021,2,Pip Removal
+A001-021,3,Visual Inspection
+A002-019I,1,Machining
+A002-019I,2,Shree Radhe Incoming Inspection
+A002-019I,3,Plating - Sitai
+A002-019I,4,PPG Inspection
+A009RH-019,1,Machining
+A009RH-019,2,Pip Removal
+A009RH-019,3,Plating - Sitai
+A009RH-019,4,PPG Inspection
+A009RH-021,1,Machining
+A009RH-021,2,Counter
+A009RH-021,3,Tapping
+A009RH-021,4,TPG Inspection
+A009RH-021,5,Visual Inspection
+B001-019,1,Machining
+B001-019,2,Pip Removal
+B001-019,3,Visual Inspection
+B001-027,1,Machining
+B001-027,2,Pip Removal
+B001-027,3,Panara Incoming Inspection
+B001-027,4,Total Length Inspection
+HF 20030U1,1,Machining
+HF 20030U1,2,PPG Inspection
+HF 20030U1,3,Visual Inspection
