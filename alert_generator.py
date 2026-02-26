@@ -256,12 +256,6 @@ def generate_alert(data, defect_path, ok_path=None):
         fill="black"
     )
 
-    draw.text(
-        (W//2 - 150, y+20),
-        "Verified By : _______________",
-        font=label_font,
-        fill="black"
-    )
 
     draw.text(
         (W//2 + 200, y+20),
@@ -288,3 +282,4 @@ def generate_alert(data, defect_path, ok_path=None):
     img.save(path)
 
     return path
+
