@@ -1,82 +1,131 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
+# ======================
+# DOCUMENT CONTROL
+# ======================
+
 COMPANY = "GABRIL INDUSTRIES PVT. LTD."
 DOCUMENT_NO = "GIPL-QA-001"
 REVISION_NO = "00"
 
-FONT_PATH = "arial.ttf"
+FONT_PATH = "DejaVuSans.ttf"
+
 
 def load_font(size):
-
     try:
         return ImageFont.truetype(FONT_PATH, size)
-
     except:
         return ImageFont.load_default()
 
 
-title_font = load_font(48)
-header_font = load_font(28)
-text_font = load_font(24)
+# Schaeffler font hierarchy
+title_font = load_font(64)
+header_font = load_font(34)
+label_font = load_font(28)
+text_font = load_font(30)
 
+
+# ======================
+# GENERATOR
+# ======================
 
 def generate_alert(data, defect_path, ok_path=None):
 
-    W, H = 1600, 1100
+    W, H = 1650, 1150
 
     img = Image.new("RGB", (W, H), "white")
     draw = ImageDraw.Draw(img)
 
+    margin = 40
+
     # ======================
-    # HEADER
+    # LOGO + COMPANY HEADER
     # ======================
 
     if os.path.exists("logo.png"):
-        logo = Image.open("logo.png").resize((200, 70))
-        img.paste(logo, (50, 30))
 
-    draw.text((300, 30), COMPANY, font=header_font, fill="black")
+        logo = Image.open("logo.png").resize((240, 80))
+        img.paste(logo, (margin, margin))
 
-    draw.text((550, 80), "QUALITY ALERT", font=title_font, fill="black")
+    draw.text(
+        (margin + 300, margin + 10),
+        COMPANY,
+        font=header_font,
+        fill="black"
+    )
 
-    # ======================
-    # DOCUMENT CONTROL BOX
-    # ======================
-
-    draw.rectangle((50, 160, 1550, 230), outline="black", width=2)
-
-    draw.text((70, 170),
-              f"Document No : {DOCUMENT_NO}",
-              font=text_font, fill="black")
-
-    draw.text((70, 200),
-              f"Revision No : {REVISION_NO}",
-              font=text_font, fill="black")
-
-    draw.text((600, 170),
-              f"Issue Date : {data['date']}",
-              font=text_font, fill="black")
-
-    draw.text((1000, 170),
-              f"NC No : {data['nc_no']}",
-              font=text_font, fill="black")
-
-    draw.text((1000, 200),
-              f"Barcode No : {data['barcode_no']}",
-              font=text_font, fill="black")
+    draw.text(
+        (W//2 - 200, margin + 90),
+        "QUALITY ALERT",
+        font=title_font,
+        fill="black"
+    )
 
     # ======================
-    # TRACEABILITY BOX
+    # DOCUMENT CONTROL BAR
     # ======================
 
-    draw.rectangle((50, 260, 1550, 600), outline="black", width=2)
+    y = margin + 180
 
-    left_x = 70
-    right_x = 820
+    draw.rectangle(
+        (margin, y, W-margin, y+80),
+        outline="black",
+        width=2
+    )
 
-    y = 280
-    spacing = 35
+    draw.text(
+        (margin+15, y+10),
+        f"Document No : {DOCUMENT_NO}",
+        font=label_font,
+        fill="black"
+    )
+
+    draw.text(
+        (margin+15, y+45),
+        f"Revision No : {REVISION_NO}",
+        font=label_font,
+        fill="black"
+    )
+
+    draw.text(
+        (W//2-150, y+10),
+        f"Issue Date : {data['date']}",
+        font=label_font,
+        fill="black"
+    )
+
+    draw.text(
+        (W-450, y+10),
+        f"NC No : {data['nc_no']}",
+        font=label_font,
+        fill="black"
+    )
+
+    draw.text(
+        (W-450, y+45),
+        f"Barcode No : {data['barcode_no']}",
+        font=label_font,
+        fill="black"
+    )
+
+    # ======================
+    # TRACEABILITY GRID
+    # ======================
+
+    y += 100
+
+    draw.rectangle(
+        (margin, y, W-margin, y+320),
+        outline="black",
+        width=2
+    )
+
+    left_x = margin + 15
+    right_x = W//2 + 50
+
+    line_y = y + 15
+    gap = 45
 
     left_fields = [
 
@@ -91,106 +140,142 @@ def generate_alert(data, defect_path, ok_path=None):
 
     right_fields = [
 
-        ("Process Stage", data["process"]),
+        ("Process Step", data["process"]),
         ("Machine No", data["machine"]),
         ("Operator", data["operator"]),
         ("Shift", data["shift"]),
         ("Defect", data["defect"]),
-        ("Qty", str(data["qty"]))
+        ("Quantity", str(data["qty"]))
 
     ]
 
-    max_rows = max(len(left_fields), len(right_fields))
+    for i in range(6):
 
-    for i in range(max_rows):
+        draw.text(
+            (left_x, line_y),
+            f"{left_fields[i][0]:15} : {left_fields[i][1]}",
+            font=text_font,
+            fill="black"
+        )
 
-        if i < len(left_fields):
+        draw.text(
+            (right_x, line_y),
+            f"{right_fields[i][0]:15} : {right_fields[i][1]}",
+            font=text_font,
+            fill="black"
+        )
 
-            draw.text(
-                (left_x, y),
-                f"{left_fields[i][0]:15} : {left_fields[i][1]}",
-                font=text_font,
-                fill="black"
-            )
-
-        if i < len(right_fields):
-
-            draw.text(
-                (right_x, y),
-                f"{right_fields[i][0]:15} : {right_fields[i][1]}",
-                font=text_font,
-                fill="black"
-            )
-
-        y += spacing
+        line_y += gap
 
     # ======================
     # IMAGE HEADERS
     # ======================
 
-    draw.rectangle((50, 620, 775, 670), fill="red")
+    y += 360
 
-    draw.text((330, 630),
-              "NOT OK",
-              font=header_font,
-              fill="white")
+    box_h = 60
 
-    draw.rectangle((825, 620, 1550, 670), fill="green")
+    draw.rectangle(
+        (margin, y, W//2 - 10, y+box_h),
+        fill=(220,0,0)
+    )
 
-    draw.text((1120, 630),
-              "OK",
-              font=header_font,
-              fill="white")
+    draw.rectangle(
+        (W//2 + 10, y, W-margin, y+box_h),
+        fill=(0,150,0)
+    )
+
+    draw.text(
+        (margin + 260, y+12),
+        "NOT OK",
+        font=header_font,
+        fill="white"
+    )
+
+    draw.text(
+        (W//2 + 260, y+12),
+        "OK",
+        font=header_font,
+        fill="white"
+    )
 
     # ======================
     # IMAGE BOXES
     # ======================
 
-    draw.rectangle((50, 680, 775, 1020), outline="black", width=2)
+    y += box_h + 10
 
-    draw.rectangle((825, 680, 1550, 1020), outline="black", width=2)
+    draw.rectangle(
+        (margin, y, W//2 - 10, y+320),
+        outline="black",
+        width=2
+    )
+
+    draw.rectangle(
+        (W//2 + 10, y, W-margin, y+320),
+        outline="black",
+        width=2
+    )
 
     if defect_path and os.path.exists(defect_path):
 
-        defect_img = Image.open(defect_path)
+        defect = Image.open(defect_path)
+        defect.thumbnail((700, 300))
 
-        defect_img.thumbnail((700, 320))
-
-        img.paste(defect_img, (70, 700))
+        img.paste(
+            defect,
+            (margin+40, y+10)
+        )
 
     if ok_path and os.path.exists(ok_path):
 
-        ok_img = Image.open(ok_path)
+        ok = Image.open(ok_path)
+        ok.thumbnail((700, 300))
 
-        ok_img.thumbnail((700, 320))
-
-        img.paste(ok_img, (845, 700))
+        img.paste(
+            ok,
+            (W//2 + 50, y+10)
+        )
 
     # ======================
     # SIGNATURE SECTION
     # ======================
 
-    draw.rectangle((50, 1040, 1550, 1090), outline="black", width=2)
+    y += 340
 
-    draw.text((70, 1050),
-              f"Prepared By : {data['prepared_by']}",
-              font=text_font,
-              fill="black")
+    draw.rectangle(
+        (margin, y, W-margin, y+70),
+        outline="black",
+        width=2
+    )
 
-    draw.text((500, 1050),
-              "Verified By : ____________________",
-              font=text_font,
-              fill="black")
+    draw.text(
+        (margin+15, y+20),
+        f"Prepared By : {data['prepared_by']}",
+        font=label_font,
+        fill="black"
+    )
 
-    draw.text((900, 1050),
-              "Approved By : Varun K",
-              font=text_font,
-              fill="black")
+    draw.text(
+        (W//2 - 150, y+20),
+        "Verified By : _______________",
+        font=label_font,
+        fill="black"
+    )
 
-    draw.text((1200, 1050),
-              f"Date : {data['date'].split(' ')[0]}",
-              font=text_font,
-              fill="black")
+    draw.text(
+        (W//2 + 200, y+20),
+        "Approved By : Varun K",
+        font=label_font,
+        fill="black"
+    )
+
+    draw.text(
+        (W-margin-280, y+20),
+        f"Date : {data['date'].split(' ')[0]}",
+        font=label_font,
+        fill="black"
+    )
 
     # ======================
     # SAVE
@@ -198,9 +283,8 @@ def generate_alert(data, defect_path, ok_path=None):
 
     os.makedirs("alerts", exist_ok=True)
 
-    alert_path = f"alerts/{data['nc_no']}.png"
+    path = f"alerts/{data['nc_no']}.png"
 
-    img.save(alert_path)
+    img.save(path)
 
-
-    return alert_path
+    return path
