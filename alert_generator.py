@@ -7,9 +7,18 @@ REVISION_NO = "00"
 
 FONT_PATH = "arial.ttf"
 
-title_font = ImageFont.truetype(FONT_PATH, 48)
-header_font = ImageFont.truetype(FONT_PATH, 28)
-text_font = ImageFont.truetype(FONT_PATH, 24)
+def load_font(size):
+
+    try:
+        return ImageFont.truetype(FONT_PATH, size)
+
+    except:
+        return ImageFont.load_default()
+
+
+title_font = load_font(48)
+header_font = load_font(28)
+text_font = load_font(24)
 
 
 def generate_alert(data, defect_path, ok_path=None):
@@ -192,5 +201,6 @@ def generate_alert(data, defect_path, ok_path=None):
     alert_path = f"alerts/{data['nc_no']}.png"
 
     img.save(alert_path)
+
 
     return alert_path
